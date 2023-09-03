@@ -1,0 +1,225 @@
+@import url('animation.css');
+/* <!-- topNav -->
+<section class="topNav">
+    <p class="brand">Insa</p>
+    <!-- desktopNav -->
+    <nav>
+        <a href=""> <i class="fa-solid fa-house"></i> Main</a>
+        <a href=""> <i class="fa-solid fa-clock"></i> Upcoming</a>
+        <a href=""> <i class="fa-brands fa-product-hunt"></i> Products</a>
+        <a href=""> <i class="fa-solid fa-microphone"></i> Reachout</a>
+    </nav>
+    <div class="join">
+        <button onclick="">Log In</button>
+        <button onclick="">Sign Up</button>
+    </div>
+    <!-- mobileNav -->
+    <menu>
+        <input type="checkbox" id="menu">
+        <label for="menu" class="menuBar"><i class="fa-solid fa-bars"></i></label>
+        <!-- f00d - cross -->
+    </menu>
+</section> */
+
+* {margin: 0; padding: 0; box-sizing: border-box;}
+
+/* topNav */
+.topNav {
+    display: flex; justify-content: space-between; align-items: center;
+    max-width: 1100px; margin: auto; min-height: 70px;
+}
+    /* brand */
+.brand::before {
+    content: '@';
+    color: aqua;
+    animation: brandS 3s ease-in-out 0s infinite normal;
+}
+.topNav .brand {
+    font-size: 2em;
+    padding: 0 .5em;
+    color: lightcoral;
+    transform: perspective(500px) rotate(0) scale(1.0);
+    animation: brandMain 7s ease-in-out 0s infinite normal;
+}
+.brand::after {
+    content: 'nene'; color: rgb(69, 197, 239);
+    animation: brandE 5s ease-in-out 0s infinite normal;
+}
+
+    /* nav */
+.topNav nav {
+    z-index: 1;
+}
+.topNav nav a {
+    display: inline-block;
+    text-decoration: none;
+    color: rgb(0, 12, 16);
+    font-size: 1em;
+    padding: .5em .7em;
+    border-bottom: .1em solid transparent;
+    border-radius: .5em;
+    transform: perspective(500px) scale(0.9);
+    transition: all 250ms ease-in-out;
+}
+.topNav nav a:hover {
+    transform: scale(1.2) rotateX(10deg) rotateY(-20deg) translate(0, 10px);
+    text-shadow: 20px 20px 1px gray;
+    border-bottom-color: black;
+}
+
+main {margin: 5rem 0 0 0;}
+    /* join */
+.join button {
+    font-size: .8em;
+    padding: 0.4em 1.5em;
+    margin: 0 0.5em;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 10px 0 10px 0;
+    transition: all 250ms ease-in-out;
+}
+.logIn {
+    background-color: rgb(96, 198, 96);
+}
+.signUp {
+    background-color: rgb(221, 91, 91);
+}
+#showMenu, #hideMenu {
+    all: unset;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background-color: transparent;
+    color: black;
+    display: none;
+    cursor: pointer;
+    transform: scale(0.7);
+}
+.join button:hover {
+    background-color: black;
+    border-radius: 0 10px 0 10px;
+}
+
+
+/* main */
+main {
+    display: flex; justify-content: space-around; align-items: center;
+}
+/* description */
+.heading {
+    font-size: 4em;
+    color: rgb(245, 11, 11);
+}
+.subheading {
+    font-size: 1.3em; color: lightcoral; font-weight: bold;
+    margin-top: 0;
+}
+.shortDescription {
+    font-size: 1em;
+    color: gray;
+    margin: 2em 0;
+    width: 70%;
+}
+.description span {display: block;}
+.description, .image {
+    max-width: 700px;
+}
+.image img {width: 100%; transform: rotateZ(10deg) rotateY(-180deg); z-index: 0;}
+input[type=email] {
+    font-size: 1em;
+    padding: 0.5em;
+    width: 20em;
+    background-color: rgb(255, 255, 255); color: white;
+    border: none;
+    border-bottom: 1px solid lightcoral;
+    border-radius: 10px;
+    transition: all 0.5s linear;
+}
+input[type=email]:focus {
+    background-color: rgb(192, 140, 140); color: black;
+}
+input[type=submit] {
+    font-size: 0.5em; padding: 0.5em; border: none;
+    background-color: gray; color: white;
+    cursor: pointer; transition: all .5s ease;
+}
+input[type=submit]:hover {
+    background-color: black;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* mobileView */
+@media (max-width: 900px) {
+    #showMenu, #hideMenu {
+        display: inline-block;
+        font-size: 1.5em;
+        padding: 0.5em;
+    }
+    #showMenu {
+        rotate: 90deg;
+    }
+    #hideMenu {display: none;}
+
+    nav {
+        position: absolute; background-color: antiquewhite; width: 100%; top: 60px; left: -100%;
+        display: flex; flex-direction: column; justify-content: flex-start; align-items: center; height: 100vh;
+    }
+    nav a {
+        margin-top: 25px;
+    }
+    
+    main {
+        margin: 2rem 0 0 0;
+        padding: 0 1.5rem;
+    }
+    .heading {font-size: 2.5em;}
+    .subheading {font-size: .8em;}
+    .shortDescription {font-size: 0.6em;}
+    input[type=email] {font-size: 0.6em;}
+    input[type=submit] {font-size: 0.3em;}
+}
+
+
+/*
+.heading {
+    font-size: 4em;
+    color: rgb(245, 11, 11);
+}
+.subheading {
+    font-size: 1.3em; color: lightcoral; font-weight: bold;
+    margin-top: 0;
+}
+.shortDescription {
+    font-size: 1em;
+    color: gray;
+    margin: 2em 0;
+    width: 70%;
+}
+*/
+
+@media (max-width: 700px) {
+    .topNav .brand {font-size: 1.5em;}
+    .join button {font-size: 0.6em;}
+
+    .heading {font-size: 1.5em;}
+    .subheading {font-size: .6em;}
+    .shortDescription {font-size: 0.em;}
+    input[type=email] {font-size: 0.4em;}
+    input[type=submit] {font-size: 0.3em;}
+
+}
